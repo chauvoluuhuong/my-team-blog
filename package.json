@@ -1,0 +1,23 @@
+{
+  "name": "test-react-hook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "configuration": "npm install concurrently",
+    "dev": "concurrently \"cd client && npm start\" \" cd server && npm run dev\"",
+    "build-client": "cd client && npm run build",
+    "production": "cd server && npm start",
+    "install-all": "concurrently \"cd client && npm install\" \"cd server && npm install\""
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://chauvoluuhuong@bitbucket.org/chauvoluuhuong/my-blog.git"
+  },
+  "homepage": "https://bitbucket.org/chauvoluuhuong/my-blog#readme",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^4.1.1"
+  }
+}
