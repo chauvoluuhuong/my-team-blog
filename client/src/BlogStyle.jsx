@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles= makeStyles({
+    ////////////////////NAVBAR
     AppBar: {
         // marginTop: '20px'
         // height: '100px'
@@ -14,34 +15,41 @@ const useStyles= makeStyles({
 
     toolBarTitle: {
         color: '#000000',
+        "marginTop":"1.33em",
+        "marginBottom":"1.33em",
+        "marginLeft":"0",
+        "marginRight":"0",
+        "fontWeight":"bold",
         '&:hover': {
-            background: "#4287f5"
+            // background: "#4287f5"
         }
     },
-
+    ////////////////////NAVBAR
     blogBriefsContainer: {
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
-        flexDirection: "column"
     },
     
     blogBrief: {
-        marginTop: "50px"
+        marginTop: "50px",
+        maxWidth: "800px"
     },
 
     blogBriefContent: {
-        display: 'flex',
-        // alignItems: 'center',
-        flexDirection: 'column',
+        display: 'block',
+        alignItems: 'flex-start',
+        flexFlow: 'column wrap',
+        maxWidth: "800px"
     },
 
     blogBriefTitle: {
-        display: 'flex',
-        justifyContent: 'center',
-        fontFamily: "Rubik",
-        fontSize: "56px",
-        fontWeight: "700",
-        color: '#000000'
+    "color":"#000000",
+    "display":"flex",
+    "fontSize":"4rem",
+    "fontFamily":"'CircularStd',sans-serif",
+    "lineHeight":"1.2em"
+    ,"justifyContent":"center"
     },
 
     blogDetailContainer: {
@@ -63,7 +71,8 @@ const useStyles= makeStyles({
     },
 
     headerImg: props => ({
-        opacity: 1/props.opacity
+        opacity: 1/props.opacity,
+        width: "100%"
     })
 })
 

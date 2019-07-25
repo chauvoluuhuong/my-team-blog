@@ -14,13 +14,15 @@ import About from './About'
 import Blog from './Blog'
 import useStyles from './BlogStyle'
 import RootPage from './RootPage'
+import InterestingThings from './InterestingThings'
 
 const App = () => {
     return (
         <>
             {window.location.pathname !== '/' ? <OurAppBar /> : null}
             <Router>
-                <Route path='/' component={RootPage} />
+                  <Route path='/' component={RootPage} />
+                <Route path='/Interesting' component={InterestingThings} />
                 <Route path="/About" component={About} />
                 <Route path="/DetailContent" component={Blog} />
             </Router>

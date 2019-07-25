@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 
 import ReactHtmlParser from 'react-html-parser';
 
@@ -15,7 +14,7 @@ import About from './About'
 import Blog from './Blog'
 import useStyles from './BlogStyle'
 
-const RootPage = () => {
+const InterestingThings = () => {
     const [transparentHeaderLevel, setStransparentHeaderLevel] = useState(1)
     const [blogs, setBlogs] = useState([])
     const classes = useStyles({opacity: transparentHeaderLevel});
@@ -24,9 +23,9 @@ const RootPage = () => {
         return blogs.map(blog=>{
             return (
                     <div className={classes.blogBrief}>
-                        <Link className={classes.blogBriefTitle} href={`/DetailContent?date=${blog.date}`}>
+                        <a className={classes.blogBriefTitle} href={`/DetailContent?date=${blog.date}`}>
                             {ReactHtmlParser(blog.title)}
-                        </Link>
+                        </a>
                         <div className={classes.blogBriefContent}>
                              {ReactHtmlParser(blog.brief)}
                              {/* what is this */}
@@ -79,7 +78,7 @@ const RootPage = () => {
             </div>
       )
 
-      const  renderRootPage = () => {
+      const  renderInterestingThings = () => {
           if(window.location.pathname === '/') {
               return (
                 <>
@@ -94,9 +93,9 @@ const RootPage = () => {
     
     return (
         <>
-            {renderRootPage()}
+            {renderInterestingThings()}
         </>
     )
 }
 
-export default RootPage
+export default InterestingThings
